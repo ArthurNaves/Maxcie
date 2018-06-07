@@ -1,0 +1,55 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - FogOfWar
+  - projectile
+  - dialog
+  - bookpage
+  - projectileG
+  - projectileA
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - 
+  - 
+  - Ground
+  - Enemies
+  - Level
+  - Player
+  - PlayerTriggers
+  - BreakableSystem
+  - Trail
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: Effects
+    uniqueID: 2051826777
+    locked: 0
+  - name: Effects
+    uniqueID: 2051826777
+    locked: 0
