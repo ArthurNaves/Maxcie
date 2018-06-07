@@ -1,0 +1,4 @@
+Shaders See-Through
+
+https://answers.unity.com/questions/387202/shader-like-portal-or-mario-land-behind-of-meshes.html
+https://answers.unity.com/questions/449034/see-through-hole-via-shaders-on-a-2d-plane.html
