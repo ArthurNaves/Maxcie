@@ -54,6 +54,7 @@ public class Player : MonoBehaviour {
     [SerializeField] float trackMousePeriod;
     [SerializeField] float movVelocity;
     [SerializeField] bool debugBook;
+    [SerializeField] bool debug;
 
     IPlayerStates CurrentState
     {
@@ -95,7 +96,8 @@ public class Player : MonoBehaviour {
     void Start()
     {
         flashing = false;
-        currentState = states.inMenuState;
+        if (debug) currentState = states.defaultState;
+        else currentState = states.inMenuState;
         originalY = transform.position.y;
         BookInCoolDown = false;
     }
@@ -104,6 +106,7 @@ public class Player : MonoBehaviour {
     {
         Rotate();
         CheckMouseInput();
+        
         if (debugBook)
         {
             Debug.Log(BookPages.PagesCollected);
