@@ -21,8 +21,8 @@ public abstract class EnemiesBase : FogOfWarObjs {
         base.Awake();
         originalSpeed = agent.speed;
         currentPath = new NavMeshPath();
-    }
 
+    }
     protected virtual void Start()
     {
         if (player == null) player = Player.Instance;

@@ -341,6 +341,9 @@
     <Compile Include="Assets\Scripts\DialogSystem\DialogBoxes\SetGameObjectsActive.cs" />
     <Compile Include="Assets\Scripts\DialogSystem\DialogBoxes\Specific\InstantiateAndDeleteInvizibleWalls.cs" />
     <Compile Include="Assets\Scripts\DialogSystem\DialogBoxes\StaticDialog.cs" />
+    <Compile Include="Assets\Scripts\Enemies\Boss\Boss.cs" />
+    <Compile Include="Assets\Scripts\Enemies\Boss\BossStateMachine\BossStateMachine.cs" />
+    <Compile Include="Assets\Scripts\Enemies\Boss\BossStateMachine\IBossStates.cs" />
     <Compile Include="Assets\Scripts\Enemies\EnemiesBase.cs" />
     <Compile Include="Assets\Scripts\Enemies\InstantiateSystem\EnemiesInstantiatorBase.cs" />
     <Compile Include="Assets\Scripts\Enemies\InstantiateSystem\Variations\InstantiateByCall.cs" />
