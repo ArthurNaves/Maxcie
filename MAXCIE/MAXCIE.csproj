@@ -456,6 +456,7 @@
     <None Include="Assets\AssetStore\Plugins\ProCore\ProBuilder\Shader\pb_VertexShader.shader" />
     <None Include="Assets\AssetStore\Plugins\ProCore\ProBuilder\readme.txt" />
     <None Include="Assets\AssetStore\Props\NãoNormies\Flames Of The Phoenix\READ_ME.txt" />
+    <None Include="Assets\AssetStore\Props\NãoNormies\Simple city plain\Read_me.txt" />
     <None Include="Assets\AssetStore\Props\NãoNormies\StaffOfPain\readme_first.txt" />
     <None Include="Assets\AssetStore\Toon Zombie S\TSF\Shaders\TSF.shader" />
     <None Include="Assets\AssetStore\Toon Zombie S\TSF\Shaders\TSFOutline.shader" />
