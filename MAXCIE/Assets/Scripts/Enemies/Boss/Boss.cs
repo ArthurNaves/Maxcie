@@ -59,7 +59,7 @@ public class Boss : EnemiesBase {
 
     void OnChangingToInvizible()
     {
-
+        ChangeState(StatesTypes.InvMoving);
     }
 
     void OnDying()

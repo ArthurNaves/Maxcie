@@ -133,6 +133,7 @@ namespace BossStateMachine
 
         public override void OnParticleCollisionEffect()
         {
+            //followVector = -followVector;
             boss.DamageBoss();
         }
 
@@ -215,6 +216,8 @@ namespace BossStateMachine
 
     public class InvzMoving : StateBase
     {
+        Vector3 dir;
+        Vector3 newDestination;
         float distanceToPlayer;
 
         public InvzMoving(Boss _boss, Player _player, NavMeshAgent _agent, NavMeshPath _currentPath, float _distanceToPlayer)
@@ -233,7 +236,8 @@ namespace BossStateMachine
 
         public override void Move()
         {
-            if (boss.ArrivedAtDestination()) boss.ChangeState(StatesTypes.InvAttacking);
+            if (Vector3.Distance(boss.transform.position, player.transform.position) <= distanceToPlayer) boss.ChangeState(StatesTypes.InvAttacking);
+            PlanNextMove();
         }
 
         public override void OnCollisionEnterEffect(Collision collision)
@@ -260,12 +264,13 @@ namespace BossStateMachine
 
         public override void PlanNextMove()
         {
-            Vector3 dir = player.transform.position - boss.transform.position;
-            Vector3 newDestination = (dir * distanceToPlayer) + player.transform.position;
+            dir = player.transform.position - boss.transform.position;
+            newDestination = (dir * distanceToPlayer) + player.transform.position;
 
             while (true)
             {
-                if (boss.ChangeDestination(newDestination)) break;
+                if (boss.ChangeDestination(newDestination))
+                    break;
                 else
                 {
                     Vector2 tempVector = Utilities.RotatePoint(dir, 10) * distanceToPlayer;

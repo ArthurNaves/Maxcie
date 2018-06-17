@@ -104,7 +104,6 @@ public class Player : MonoBehaviour {
 
     void Update()
     {
-        print(delegateHaSubs);
         Rotate();
         CheckMouseInput();
         
