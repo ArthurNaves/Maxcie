@@ -46,7 +46,7 @@ public class CustomTreeBrush : EditorWindow
         int instanctiatedTrees = 0;
         for(int i = 0; i < data.treeInstances.Length; i++)
         {
-            if (i % 5 == 0)
+            if (i % 10 == 0)
             {
                 tree = data.treeInstances[i];
                 Vector3 position = new Vector3(tree.position.x * width, tree.position.y * y, tree.position.z * height);
