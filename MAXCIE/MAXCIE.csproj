@@ -194,9 +194,6 @@
     <Reference Include="UnityEngine.WindModule">
       <HintPath>D:/Program Files/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.WindModule.dll</HintPath>
     </Reference>
-    <Reference Include="Vuforia.UnityExtensions">
-      <HintPath>D:/Program Files/Unity/Editor/Data/PlaybackEngines/VuforiaSupport/Managed/Runtime/Vuforia.UnityExtensions.dll</HintPath>
-    </Reference>
     <Reference Include="UnityEngine.UI">
       <HintPath>D:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
     </Reference>
@@ -378,6 +375,7 @@
     <Compile Include="Assets\Scripts\Specific\Level0\Scenery\LightPosts\LightPostsManager.cs" />
     <Compile Include="Assets\Scripts\Specific\Level0\Scenery\TreeBarriers.cs" />
     <Compile Include="Assets\Scripts\UI\UI_Buttons.cs" />
+    <Compile Include="Assets\Scripts\utilities\Utilities.cs" />
     <Compile Include="Assets\Shaders\ToonShading-master\Assets\Demo\Scripts\CameraOrbit.cs" />
     <Compile Include="Assets\Shaders\ToonShading-master\Assets\Demo\Scripts\LineController.cs" />
     <Compile Include="Assets\Shaders\ToonShading-master\Assets\ToonShading\Scripts\Buoyancy.cs" />

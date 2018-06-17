@@ -104,6 +104,7 @@ public class Player : MonoBehaviour {
 
     void Update()
     {
+        print(delegateHaSubs);
         Rotate();
         CheckMouseInput();
         
@@ -209,7 +210,7 @@ public class Player : MonoBehaviour {
 
     public void SendMessageColliderOff()
     {
-        if(delegateHaSubs) FogOfWarOffDel(spotlightTrigger);
+        if(fogOfWarOffDel != null) FogOfWarOffDel(spotlightTrigger);
     }
 
     public void ChangeState(IPlayerStates newState)
