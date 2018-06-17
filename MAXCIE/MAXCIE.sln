@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2017
+# Visual Studio 15
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MAXCIE", "MAXCIE.csproj", "{EB4A7CE7-E734-4DE9-20B7-5743C5977293}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MAXCIE.Editor", "MAXCIE.Editor.csproj", "{31A5128F-BCE0-EDBF-1EFD-970FCF214B7A}"

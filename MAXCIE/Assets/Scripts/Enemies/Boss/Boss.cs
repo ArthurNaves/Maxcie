@@ -5,6 +5,17 @@ using BossStateMachine;
 
 public class Boss : EnemiesBase {
     BossStates bossStates;
+    StateBase currentState;
+    StateBase CurrentState
+    {
+        get { return currentState; }
+        set
+        {
+            currentState.OnStateExit();
+            currentState = value;
+            currentState.OnStateEnter();
+        }
+    }
 
     protected override void Awake()
     {
@@ -19,4 +30,13 @@ public class Boss : EnemiesBase {
 	void Update () {
 		
 	}
+
+    void Move() { CurrentState.Move(); }
+    void Attack() { CurrentState.Attack(); }
+
+    protected override void OnCollisionEnter(Collision collision)
+    {
+        CurrentState.OnParticleCollisionEffect();
+    }
+
 }
