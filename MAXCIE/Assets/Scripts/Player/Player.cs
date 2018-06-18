@@ -56,6 +56,8 @@ public class Player : MonoBehaviour {
     [SerializeField] bool debugBook;
     [SerializeField] bool debug;
 
+    int originalHp;
+
     IPlayerStates CurrentState
     {
         get { return currentState; }
@@ -84,6 +86,7 @@ public class Player : MonoBehaviour {
     {
         PatternSingletonAwake();
 
+        originalHp = hp;
         mouseTrail.FollowingMouse = false;
         delegateHaSubs = false;
         spellsGrid = DrawingGrid.GetGrid(3);
@@ -257,6 +260,12 @@ public class Player : MonoBehaviour {
         {
             spellBook[i].learned = saveInfo.spellsLearned[i];
         }
+    }
+
+    public void RestoreHp()
+    {
+        hp = originalHp;
+        lightBeneathPlayer.cookie = null;
     }
 
     IEnumerator RunCoolDown(float spellCoolDown)

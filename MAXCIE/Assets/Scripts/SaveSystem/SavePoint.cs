@@ -14,6 +14,7 @@ public class SavePoint : MonoBehaviour {
     [SerializeField] bool deleteAllSaves;//Variavel para debugar o sistema de save;
     [SerializeField] bool clearSave;     //Variavel para debugar o sistema de save;
 
+    bool hpGiven = false;
     string pointId;
 
     void Awake()
@@ -66,6 +67,11 @@ public class SavePoint : MonoBehaviour {
     void OnTriggerEnter(Collider other)
     {
         SaveSystem.SaveInfo newSave = Player.Instance.GetSaveInfo();
+        if (!hpGiven)
+        {
+            hpGiven = true;
+            Player.Instance.RestoreHp();
+        }
         if (newSave != lastSave)
         {
             lastSave = newSave;
