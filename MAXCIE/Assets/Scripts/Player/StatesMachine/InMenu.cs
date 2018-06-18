@@ -18,6 +18,7 @@ public class InMenu : IPlayerStates
 
     public void OnExitState(Player player, List<Vector3> mousePath, Texture2D mouseTex)
     {
+        player.ChangeAnim(PlayerAnimation.Waking);
     }
 
     public void Rotate(Transform playerTransfrm, LayerMask ground)
