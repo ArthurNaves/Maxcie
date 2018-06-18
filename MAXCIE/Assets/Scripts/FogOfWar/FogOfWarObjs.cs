@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class FogOfWarObjs : MonoBehaviour {
     [SerializeField] Renderer meshRendr;
+    [SerializeField] Renderer[] meshRenders;
 
     protected List<Collider> fogOfWarColliders;
 
@@ -11,7 +12,8 @@ public class FogOfWarObjs : MonoBehaviour {
 
     protected virtual void Awake()
     {
-        meshRendr.enabled = false;
+        if(meshRenders != null) foreach (Renderer render in meshRenders) render.enabled = false;
+        else meshRendr.enabled = false;
         fogOfWarColliders = new List<Collider>();
         Player.FogOfWarOffDel += OnFogOfWarOff;
     }
@@ -20,7 +22,11 @@ public class FogOfWarObjs : MonoBehaviour {
     {
         if (other.CompareTag("FogOfWar"))
         {
-            if (fogOfWarColliders.Count == 0) meshRendr.enabled = true;
+            if (meshRenders != null)
+            {
+                if (fogOfWarColliders.Count == 0) foreach (Renderer render in meshRenders) render.enabled = true;
+            }
+            else if (fogOfWarColliders.Count == 0) meshRendr.enabled = true;
             fogOfWarColliders.Add(other);
         }
     }
@@ -29,7 +35,11 @@ public class FogOfWarObjs : MonoBehaviour {
         if (other.CompareTag("FogOfWar"))
         {
             fogOfWarColliders.Remove(other);
-            if (fogOfWarColliders.Count == 0 && gameObject) meshRendr.enabled = false;
+            if (meshRenders != null)
+            {
+                if (fogOfWarColliders.Count == 0 && gameObject) foreach (Renderer render in meshRenders) render.enabled = false;
+            }
+            else if (fogOfWarColliders.Count == 0 && gameObject) meshRendr.enabled = false;
         }
     }
 
