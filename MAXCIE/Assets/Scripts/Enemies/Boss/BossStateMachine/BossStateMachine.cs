@@ -197,12 +197,10 @@ namespace BossStateMachine
         public override void OnStateEnter()
         {
             boss.StartCoroutine(CooldownTimer());
-            agent.isStopped = true;
         }
 
         public override void OnStateExit()
         {
-            agent.isStopped = false;
         }
 
         public override void PlanNextMove()
@@ -220,7 +218,6 @@ namespace BossStateMachine
     {
         Vector3 dir;
         Vector3 newDestination;
-        Vector3 offSetVector;
         float distanceToPlayer;
 
         public InvzMoving(Boss _boss, Player _player, NavMeshAgent _agent, NavMeshPath _currentPath, float _distanceToPlayer)
@@ -264,19 +261,20 @@ namespace BossStateMachine
         public override void OnStateEnter()
         {
             PlanNextMove();
+            boss.StartCoroutine(RandomizeGointVector());
         }
 
         public override void OnStateExit()
         {
+            boss.StopCoroutine(RandomizeGointVector());
         }
 
-        public override void PlanNextMove()
+    public override void PlanNextMove()
         {
             dir = player.transform.position - boss.transform.position;
             newDestination = (dir * distanceToPlayer) + player.transform.position;
-
-            newDestination = Utilities.RotatePoint(newDestination, Random.Range(0, 360));
             agent.SetDestination(newDestination);
+            //newDestination = Utilities.RotatePoint(newDestination, 10);
             //while (true)
             //{
             //    if (boss.ChangeDestination(newDestination)) break;
@@ -287,6 +285,14 @@ namespace BossStateMachine
             //    }
             //}
 
+        }
+        IEnumerator RandomizeGointVector()
+        {
+            while (true)
+            {
+                yield return new WaitForSeconds(1.5f);
+                newDestination = Utilities.RotatePoint(newDestination, Random.Range(0, 360));
+            }
         }
     }
 
