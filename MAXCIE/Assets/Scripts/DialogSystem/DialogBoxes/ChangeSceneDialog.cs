@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class ChangeSceneDialog : DialogBoxBase {
+    static GameObject[] staticNotDestroy;
     [SerializeField] GameObject[] notDestroy;
     [SerializeField] GameObject playerSpawnPos;
 

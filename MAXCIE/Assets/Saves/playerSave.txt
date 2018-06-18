@@ -1,1 +1,1 @@
--57.46009,1.047,-74.58667,5,0,False,False,False,False,
+-57.46182,1.047,-74.47768,5,0,False,False,False,False,

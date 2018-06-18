@@ -13326,6 +13326,8 @@ MonoBehaviour:
   dialogBox: {fileID: 735740834}
   textsParent: {fileID: 2098697796}
   mouseAnim: {fileID: 0}
+  cle: {fileID: 0}
+  textInWichCleDies: {fileID: 0}
   conditionMet: 1
   displaySpeed: 0.05
   instantiator: {fileID: 756209114}
@@ -25580,6 +25582,8 @@ MonoBehaviour:
   dialogBox: {fileID: 735740834}
   textsParent: {fileID: 1277402091}
   mouseAnim: {fileID: 0}
+  cle: {fileID: 0}
+  textInWichCleDies: {fileID: 0}
   conditionMet: 1
   displaySpeed: 0.05
   instantiator: {fileID: 1354415456}
@@ -26325,6 +26329,8 @@ MonoBehaviour:
   dialogBox: {fileID: 735740834}
   textsParent: {fileID: 719813197}
   mouseAnim: {fileID: 0}
+  cle: {fileID: 0}
+  textInWichCleDies: {fileID: 0}
   conditionMet: 1
   displaySpeed: 0.05
   instantiator: {fileID: 14060098}
@@ -28340,6 +28346,8 @@ MonoBehaviour:
   dialogBox: {fileID: 735740834}
   textsParent: {fileID: 20450421}
   mouseAnim: {fileID: 0}
+  cle: {fileID: 0}
+  textInWichCleDies: {fileID: 0}
   conditionMet: 1
   displaySpeed: 0.04
   instantiator: {fileID: 1699667531}
@@ -37238,6 +37246,8 @@ MonoBehaviour:
   dialogBox: {fileID: 735740834}
   textsParent: {fileID: 1691221511}
   mouseAnim: {fileID: 0}
+  cle: {fileID: 0}
+  textInWichCleDies: {fileID: 0}
   conditionMet: 1
   displaySpeed: 0.05
   instantiator: {fileID: 228994556}
@@ -38314,6 +38324,8 @@ MonoBehaviour:
   dialogBox: {fileID: 735740834}
   textsParent: {fileID: 1425522587}
   mouseAnim: {fileID: 0}
+  cle: {fileID: 0}
+  textInWichCleDies: {fileID: 0}
   conditionMet: 1
   displaySpeed: 0.1
 --- !u!1001 &1235644409
@@ -42633,6 +42645,8 @@ MonoBehaviour:
   dialogBox: {fileID: 735740834}
   textsParent: {fileID: 2098697796}
   mouseAnim: {fileID: 0}
+  cle: {fileID: 0}
+  textInWichCleDies: {fileID: 0}
   conditionMet: 1
   displaySpeed: 0.05
   instantiator: {fileID: 1670542456}
@@ -49041,6 +49055,48 @@ Prefab:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 38b0a07c020f83b4a8ac7d3ae323ccdd, type: 2}
+  m_IsPrefabParent: 0
+--- !u!1001 &1610201114
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4871795385986268, guid: 4e85ee58603ea454080f9d2d3f20e554, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 4871795385986268, guid: 4e85ee58603ea454080f9d2d3f20e554, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 1.0689
+      objectReference: {fileID: 0}
+    - target: {fileID: 4871795385986268, guid: 4e85ee58603ea454080f9d2d3f20e554, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -216.36
+      objectReference: {fileID: 0}
+    - target: {fileID: 4871795385986268, guid: 4e85ee58603ea454080f9d2d3f20e554, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4871795385986268, guid: 4e85ee58603ea454080f9d2d3f20e554, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4871795385986268, guid: 4e85ee58603ea454080f9d2d3f20e554, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4871795385986268, guid: 4e85ee58603ea454080f9d2d3f20e554, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4871795385986268, guid: 4e85ee58603ea454080f9d2d3f20e554, type: 2}
+      propertyPath: m_RootOrder
+      value: 11
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 4e85ee58603ea454080f9d2d3f20e554, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &1610402046
 GameObject:
