@@ -12,6 +12,8 @@ public class DialogBoxBase : MonoBehaviour {
     [SerializeField] protected GameObject dialogBox;
     [SerializeField] protected GameObject textsParent;
     [SerializeField] protected MouseAnimgController mouseAnim;
+    [SerializeField] protected GameObject cle;
+    [SerializeField] protected Text textInWichCleDies;
 
     [SerializeField] protected bool conditionMet;
     [SerializeField] protected float displaySpeed;
@@ -124,6 +126,7 @@ public class DialogBoxBase : MonoBehaviour {
             {
                 index++;
 
+                if(texts[index] == textInWichCleDies) if (cle != null) Destroy(cle);
                 textToDisplay = texts[index].text;
                 texts[index].text = string.Empty;
                 texts[index].enabled = true;
