@@ -31,15 +31,16 @@ public class EnemyBasic : EnemiesBase {
     protected override void Awake()
     {
         states.EnemiesStatesInitializer();
+        currentState = states.asleep;
+        DialogBoxBase.dialogEvent += ONdialogEvent; //socorro
+
         checkPlayrPosTime = checkPlayrPosTimeAsleep;
         base.Awake();
     }
 
     protected override void Start()
     {
-        DialogBoxBase.dialogEvent += ONdialogEvent;
         base.Start();
-        currentState = states.asleep;
         StartCoroutine("PlayerPosCorroutine");
     }
 
