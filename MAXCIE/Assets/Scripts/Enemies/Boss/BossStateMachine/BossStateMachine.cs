@@ -284,7 +284,6 @@ namespace BossStateMachine
             //        newDestination = (new Vector3(tempVector.x, boss.transform.position.y, tempVector.y)) + player.transform.position;
             //    }
             //}
-
         }
         IEnumerator RandomizeGointVector()
         {

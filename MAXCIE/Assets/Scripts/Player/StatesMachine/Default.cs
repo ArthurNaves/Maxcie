@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Default : IPlayerStates
 {
+    public static bool inTutorial = false;
     public void CheckInput(Player player, PlayerStates pStates, MouseTrail mousetrail, List<Vector3> mousePath, Texture2D mouseTex)
     {
         if (Input.GetMouseButtonDown(1))
@@ -15,6 +16,7 @@ public class Default : IPlayerStates
 
     public void Move(CharacterController playerController, Transform playerTrans, float movVelocity)
     {
+        if (inTutorial) return;
         Vector3 mov = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
         playerController.Move(mov * movVelocity * Time.deltaTime);
     }
