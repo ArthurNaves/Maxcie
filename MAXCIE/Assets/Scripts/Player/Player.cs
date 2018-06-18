@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
+public enum PlayerAnimation { Waking, Idle, Walking, Attack, Dead, Damage }
 public class Player : MonoBehaviour {
     public delegate void FogOfWarOff(Collider fogOfWarCollider);
     static FogOfWarOff fogOfWarOffDel;
@@ -28,6 +29,7 @@ public class Player : MonoBehaviour {
 
     public bool BookInCoolDown { get; private set; }
 
+    [SerializeField] Animator anim;
     [SerializeField] GameObject model;
     [SerializeField] MeshCollider spotlightTrigger;
     [SerializeField] Light bookLight;
@@ -57,6 +59,7 @@ public class Player : MonoBehaviour {
     [SerializeField] float movVelocity;
     [SerializeField] bool debugBook;
     [SerializeField] bool debug;
+    [SerializeField] string[] animNames;
 
     int originalHp;
 
@@ -70,7 +73,6 @@ public class Player : MonoBehaviour {
             currentState.OnEnterState(this, mousePath, bookLight, spotlightTrigger, mouseReadyToPaint);
         }
     }
-
     IPlayerStates currentState;
     PlayerStates states;
 
@@ -80,6 +82,7 @@ public class Player : MonoBehaviour {
     DrawingGrid spellsGrid;
     Vector3 cameraOffset;
 
+    string lastAnimation;
     bool flashing;
     float originalY;
 
@@ -269,6 +272,17 @@ public class Player : MonoBehaviour {
     {
         hp = originalHp;
         lightBeneathPlayer.cookie = null;
+    }
+
+    public void ChangeAnim(PlayerAnimation newAnimation)
+    {
+        int index = 0;
+
+        if (lastAnimation != null) anim.SetBool(lastAnimation, false);
+
+        index = (int)newAnimation;
+        lastAnimation = animNames[index];
+        anim.SetBool(animNames[index], true);
     }
 
     IEnumerator RunCoolDown(float spellCoolDown)
