@@ -7,8 +7,8 @@ public class FogOfWarObjs : MonoBehaviour {
 
     protected List<Collider> fogOfWarColliders;
 
-    
-    
+
+
     protected virtual void Awake()
     {
         meshRendr.enabled = false;
@@ -33,7 +33,7 @@ public class FogOfWarObjs : MonoBehaviour {
         }
     }
 
-    protected void OnFogOfWarOff(Collider fogOfWarCollider)
+    protected virtual void OnFogOfWarOff(Collider fogOfWarCollider)
     {
         if (fogOfWarColliders.Contains(fogOfWarCollider)) OnTriggerExit(fogOfWarCollider);
     }

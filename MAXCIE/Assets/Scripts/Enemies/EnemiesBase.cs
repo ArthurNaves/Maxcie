@@ -74,6 +74,7 @@ public abstract class EnemiesBase : FogOfWarObjs {
         }
         return false;
     }
+
     protected void AnimaWalking()
     {
         anim.SetBool("Walking", true);
