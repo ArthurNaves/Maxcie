@@ -915,7 +915,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1085526409876570}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -4.1943817, y: 0, z: -1.0780029}
+  m_LocalPosition: {x: -70.683624, y: 0, z: -208.32704}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4766141447815652}
@@ -1711,7 +1711,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   meshRendr: {fileID: 137867501317698976}
   agent: {fileID: 195991606534334344}
-  anim: {fileID: 95342940194942322}
+  anim: {fileID: 95209343671783246}
+  particleDying: {fileID: 100006, guid: 2a474af3f4c27be4e9bdce39cfe4315d, type: 2}
   moveSpeed: 5
   tagsOfKiller:
   - projectile

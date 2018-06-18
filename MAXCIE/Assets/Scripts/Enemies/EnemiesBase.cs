@@ -6,6 +6,7 @@ using UnityEngine.AI;
 public abstract class EnemiesBase : FogOfWarObjs {
     [SerializeField] protected NavMeshAgent agent;
     [SerializeField] protected Animator anim;
+    [SerializeField] protected GameObject particleDying;
 
     [SerializeField] protected float moveSpeed;
     [SerializeField] protected string[] tagsOfKiller;
@@ -32,6 +33,7 @@ public abstract class EnemiesBase : FogOfWarObjs {
     {
         if (CompareTags(other.tag))
         {
+            if (particleDying != null) Destroy(Instantiate(particleDying, transform.position, new Quaternion()), 5);
             gameObject.SetActive(false);
             Destroy(gameObject, 5);
         }
@@ -47,6 +49,7 @@ public abstract class EnemiesBase : FogOfWarObjs {
         if (collision.gameObject.CompareTag("Player"))
         {
             Player.Instance.TakeDamage();
+            if (particleDying != null) Destroy(Instantiate(particleDying, transform.position, new Quaternion()), 5);
             gameObject.SetActive(false);
             Destroy(gameObject, 5);
         }
