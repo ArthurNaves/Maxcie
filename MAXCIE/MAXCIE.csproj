@@ -371,6 +371,7 @@
     <Compile Include="Assets\Shaders\ToonShading-master\Assets\ToonShading\Scripts\Buoyancy.cs" />
     <Compile Include="Assets\Shaders\ToonShading-master\Assets\ToonShading\Scripts\ToonWater.cs" />
     <Compile Include="Assets\Shaders\ToonShading-master\Assets\ToonShading\Scripts\Voronoi.cs" />
+    <Compile Include="Assets\Textures&amp;Maps\Textures\Non-Terrain\Menu\UI_ENDGAME.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\!!!\Lembretes e links uteis.txt" />
