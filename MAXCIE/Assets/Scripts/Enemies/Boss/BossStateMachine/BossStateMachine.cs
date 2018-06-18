@@ -197,10 +197,12 @@ namespace BossStateMachine
         public override void OnStateEnter()
         {
             boss.StartCoroutine(CooldownTimer());
+            agent.isStopped = true;
         }
 
         public override void OnStateExit()
         {
+            agent.isStopped = false;
         }
 
         public override void PlanNextMove()
@@ -218,6 +220,7 @@ namespace BossStateMachine
     {
         Vector3 dir;
         Vector3 newDestination;
+        Vector3 offSetVector;
         float distanceToPlayer;
 
         public InvzMoving(Boss _boss, Player _player, NavMeshAgent _agent, NavMeshPath _currentPath, float _distanceToPlayer)
@@ -236,7 +239,11 @@ namespace BossStateMachine
 
         public override void Move()
         {
-            if (Vector3.Distance(boss.transform.position, player.transform.position) <= distanceToPlayer) boss.ChangeState(StatesTypes.InvAttacking);
+            Vector3 lookAtVec = player.transform.position;
+            lookAtVec.y = boss.transform.position.y;
+            boss.transform.LookAt(lookAtVec);
+            
+            if (agent.remainingDistance <= distanceToPlayer) boss.ChangeState(StatesTypes.InvAttacking);
             PlanNextMove();
         }
 
@@ -256,6 +263,7 @@ namespace BossStateMachine
 
         public override void OnStateEnter()
         {
+            PlanNextMove();
         }
 
         public override void OnStateExit()
@@ -267,16 +275,17 @@ namespace BossStateMachine
             dir = player.transform.position - boss.transform.position;
             newDestination = (dir * distanceToPlayer) + player.transform.position;
 
-            while (true)
-            {
-                if (boss.ChangeDestination(newDestination))
-                    break;
-                else
-                {
-                    Vector2 tempVector = Utilities.RotatePoint(dir, 10) * distanceToPlayer;
-                    newDestination = (new Vector3(tempVector.x, boss.transform.position.y, tempVector.y)) + player.transform.position;
-                }
-            }
+            newDestination = Utilities.RotatePoint(newDestination, Random.Range(0, 360));
+            agent.SetDestination(newDestination);
+            //while (true)
+            //{
+            //    if (boss.ChangeDestination(newDestination)) break;
+            //    else
+            //    {
+            //        Vector2 tempVector = Utilities.RotatePoint(dir, 10) * distanceToPlayer;
+            //        newDestination = (new Vector3(tempVector.x, boss.transform.position.y, tempVector.y)) + player.transform.position;
+            //    }
+            //}
 
         }
     }
