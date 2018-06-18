@@ -22,7 +22,7 @@ public class ChangeSceneDialog : DialogBoxBase {
         Player.Instance.transform.position = playerSpawnPos.transform.position;
         Destroy(gameObject);
     }
-    protected override void CallDialogEvent()
+    public override void CallDialogEvent()
     {
     }
 }

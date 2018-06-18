@@ -236,7 +236,11 @@ namespace BossStateMachine
 
         public override void Move()
         {
-            if (Vector3.Distance(boss.transform.position, player.transform.position) <= distanceToPlayer) boss.ChangeState(StatesTypes.InvAttacking);
+            Vector3 lookAtVec = player.transform.position;
+            lookAtVec.y = boss.transform.position.y;
+            boss.transform.LookAt(lookAtVec);
+            
+            if (agent.remainingDistance <= distanceToPlayer) boss.ChangeState(StatesTypes.InvAttacking);
             PlanNextMove();
         }
 
@@ -256,28 +260,38 @@ namespace BossStateMachine
 
         public override void OnStateEnter()
         {
+            PlanNextMove();
+            boss.StartCoroutine(RandomizeGointVector());
         }
 
         public override void OnStateExit()
         {
+            boss.StopCoroutine(RandomizeGointVector());
         }
 
-        public override void PlanNextMove()
+    public override void PlanNextMove()
         {
             dir = player.transform.position - boss.transform.position;
             newDestination = (dir * distanceToPlayer) + player.transform.position;
-
+            agent.SetDestination(newDestination);
+            //newDestination = Utilities.RotatePoint(newDestination, 10);
+            //while (true)
+            //{
+            //    if (boss.ChangeDestination(newDestination)) break;
+            //    else
+            //    {
+            //        Vector2 tempVector = Utilities.RotatePoint(dir, 10) * distanceToPlayer;
+            //        newDestination = (new Vector3(tempVector.x, boss.transform.position.y, tempVector.y)) + player.transform.position;
+            //    }
+            //}
+        }
+        IEnumerator RandomizeGointVector()
+        {
             while (true)
             {
-                if (boss.ChangeDestination(newDestination))
-                    break;
-                else
-                {
-                    Vector2 tempVector = Utilities.RotatePoint(dir, 10) * distanceToPlayer;
-                    newDestination = (new Vector3(tempVector.x, boss.transform.position.y, tempVector.y)) + player.transform.position;
-                }
+                yield return new WaitForSeconds(1.5f);
+                newDestination = Utilities.RotatePoint(newDestination, Random.Range(0, 360));
             }
-
         }
     }
 

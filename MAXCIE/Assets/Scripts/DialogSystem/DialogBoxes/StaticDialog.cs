@@ -7,6 +7,7 @@ public class StaticDialog : DialogInstantiateEnemies {
     [SerializeField] GameObject[] textParents;
     [SerializeField] BookPages bookPage;
     [SerializeField] SetGameObjectsActive dialog;
+    [SerializeField] MouseAnimgController[] anim;
 
     static int dialogIndex = 0;
 
@@ -58,4 +59,8 @@ public class StaticDialog : DialogInstantiateEnemies {
         dialogIndex++;
     }
     //
+    protected override void CallTuto()
+    {
+        anim[dialogIndex-1].ActivateTutorial(this);
+    }
 }

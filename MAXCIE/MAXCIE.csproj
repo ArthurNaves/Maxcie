@@ -344,6 +344,7 @@
     <Compile Include="Assets\Scripts\Enemies\Variations\EnemyBasic.cs" />
     <Compile Include="Assets\Scripts\FogOfWar\FogOfWarObjs.cs" />
     <Compile Include="Assets\Scripts\Materials\AnimatedTexture.cs" />
+    <Compile Include="Assets\Scripts\MouseAnimgController.cs" />
     <Compile Include="Assets\Scripts\Player\GridSystem\DrawingGrid.cs" />
     <Compile Include="Assets\Scripts\Player\GridSystem\MouseTrail.cs" />
     <Compile Include="Assets\Scripts\Player\GridSystem\Quad.cs" />

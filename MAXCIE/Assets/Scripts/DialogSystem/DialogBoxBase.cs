@@ -11,6 +11,7 @@ public class DialogBoxBase : MonoBehaviour {
 
     [SerializeField] protected GameObject dialogBox;
     [SerializeField] protected GameObject textsParent;
+    [SerializeField] protected MouseAnimgController mouseAnim;
 
     [SerializeField] protected bool conditionMet;
     [SerializeField] protected float displaySpeed;
@@ -56,6 +57,7 @@ public class DialogBoxBase : MonoBehaviour {
         dialogBox.SetActive(false);
         conditionMet = false;
         CallDialogEvent();
+        CallTuto();
         player.OnDialogClosed();
     }
 
@@ -64,7 +66,6 @@ public class DialogBoxBase : MonoBehaviour {
         CallDialogEvent();
         dialogBox.SetActive(true);
         ChangeDisplayedText();
-            
     }
 
     protected IEnumerator DisplayText()
@@ -101,7 +102,7 @@ public class DialogBoxBase : MonoBehaviour {
         }
     }
 
-    protected virtual void CallDialogEvent()
+    public virtual void CallDialogEvent()
     {
         if (dialogEvent != null) dialogEvent();
     }
@@ -142,5 +143,9 @@ public class DialogBoxBase : MonoBehaviour {
     public virtual void SetConditionTrue()
     {
         conditionMet = true;
+    }
+    protected virtual void CallTuto()
+    {
+        if (mouseAnim != null) mouseAnim.ActivateTutorial(this);
     }
 }

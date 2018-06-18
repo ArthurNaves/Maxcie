@@ -24,6 +24,8 @@ public class Player : MonoBehaviour {
     }
     static Player instance;
 
+    public MouseAnimgController MouseAnim { get; set; }
+
     public bool BookInCoolDown { get; private set; }
 
     [SerializeField] GameObject model;
@@ -159,6 +161,7 @@ public class Player : MonoBehaviour {
     {
         if (spellBook[index].learned)
         {
+            if (MouseAnim != null) MouseAnim.OnPlayerSpell(index);
             coolDownDuration = spellBook[index].coolDownTime;
             spellBook[index].projectiles.Play();
             BookInCoolDown = true;

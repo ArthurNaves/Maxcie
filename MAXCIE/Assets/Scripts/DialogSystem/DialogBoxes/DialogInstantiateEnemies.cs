@@ -7,7 +7,11 @@ public class DialogInstantiateEnemies : DialogBoxBase {
 
     protected override void CloseDialog()
     {
-        base.CloseDialog();
+        dialogBox.SetActive(false);
+        conditionMet = false;
+        CallDialogEvent();
+        player.OnDialogClosed();
         instantiator.CallInstantiator();
+        CallTuto();
     }
 }
